@@ -314,6 +314,14 @@
     return YES;
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)recognizer {
+    if ([self.delegate conformsToProtocol:@protocol(RESideMenuDelegate)] && [self.delegate respondsToSelector:@selector(sideMenuGestureRecognizerShouldBegin:)]){
+        return [self.delegate sideMenuGestureRecognizerShouldBegin:recognizer];
+    } else {
+        return YES;
+    }
+}
+
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer
 {
     if ([self.delegate conformsToProtocol:@protocol(RESideMenuDelegate)] && [self.delegate respondsToSelector:@selector(sideMenu:didRecognizePanGesture:)])

@@ -68,4 +68,7 @@
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController;
 - (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController;
 
+- (BOOL)sideMenuGestureRecognizerShouldBegin:(UIGestureRecognizer *)recognizer;
+
+
 @end
